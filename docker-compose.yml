@@ -4,4 +4,6 @@ services:
     image: trollfaceiv/dockercicd:latest
     ports:
       - 80:80
-    
+    build:
+      context: .
+      dockerfile: Dockerfile
