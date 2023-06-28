@@ -1,0 +1,8 @@
+version: '3'
+services:
+  myapp:
+    image: trollfaceiv/dockercicd:latest
+    ports:
+      - 80:80
+    detach: true
+    
