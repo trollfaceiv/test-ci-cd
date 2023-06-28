@@ -4,5 +4,4 @@ services:
     image: trollfaceiv/dockercicd:latest
     ports:
       - 80:80
-    detach: true
     

@@ -8,6 +8,8 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    env:
+      VERSION: 1
     steps:
       -
         name: Set up Docker Buildx
@@ -19,9 +21,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
+        name: Increment version
+        run: echo "VERSION=$((VERSION + 1))" >> $GITHUB_ENV
+      -
         name: Build and push
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: trollfaceiv/dockercicd:latest
-      
+          tags: trollfaceiv/dockercicd:${{ env.VERSION }}
