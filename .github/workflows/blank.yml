@@ -26,4 +26,4 @@ jobs:
           tags: trollfaceiv/dockercicd:latest
       -
         name: lancia container
-        run: docker run trollfaceiv/dockercicd:latest
+        run: docker run -d trollfaceiv/dockercicd:latest
